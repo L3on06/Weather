@@ -11,6 +11,8 @@ a {
 
 .body {
   background-color: #6ebcff;
+  /* background: rgb(174,236,238); */
+/* background: radial-gradient(circle, rgba(174,236,238,1) 0%, rgba(110,188,255,1) 100%); */
 }
 
 .container {
@@ -22,18 +24,16 @@ a {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 20%;
 }
 
 .header {
-  height: 15vh;
+  height: 20vh;
   text-align: center;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
 .logoName {
@@ -46,7 +46,7 @@ a {
 
 
 .main {
-  height: 85vh;
+  height: 80vh;
 }
 
 .modeImg {
@@ -55,11 +55,7 @@ a {
 }
 
 .search {
-  margin: 0 auto;
-  display: flex;
   border: none;
-  width: 30%;
-  padding: 10px;
   background-color: transparent;
   font-size: x-large;
   outline: none;
@@ -67,22 +63,22 @@ a {
 
 .widget {
   margin: 0 auto;
-  width: 40%;
+  width: 35%;
   height: 75vh;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50px;
+/*  */
 }
 .widget-location{
-padding: 10%;
+padding: 5%;
 }
 
 .widget-icon {
-  width: 40%;
+  width: 50%;
 }
 
 .widget-c {
-  font-size: 7rem;
+  font-size: 5rem;
 }
 
 .widget-text {
@@ -93,3 +89,41 @@ padding: 10%;
 .widget-time {
   font-size: 1.5rem;
 }
+
+.form-control {
+  position: relative;
+  margin: 10px 0 40px;
+  width: 190px;
+  color: #000;
+}
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+}
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: #fff;
+}
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+  color: #fff;
+}
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.form-control input:focus+label span{
+  /* color: lightblue; */
+  transform: translateY(-30px);
+} 
