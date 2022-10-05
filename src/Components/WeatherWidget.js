@@ -77,18 +77,16 @@ function WeatherWidget(props) {
         }
         return url;
     }
-    const leon = props.bg;
-    console.log(leon)
+
 
     return (
-        <div className="widget" style={{ boxShadow: leon ? '-22px -22px 40px #63a9e6, 22px 22px 40px #79cfff' : "-31px -31px 62px #1b1b1b, 31px 31px 62px #272727" }}>
+        <div className="widget" style={{ boxShadow: props.bg ? '-22px -22px 40px #63a9e6, 22px 22px 40px #79cfff' : "-31px -31px 62px #1b1b1b, 31px 31px 62px #272727" }}>
             <h1 className="widget-location">{props.data.location.country}/{props.data.location.name}</h1>
             <img className="widget-icon" src={handleIcon()} alt={props.data.current.condition.text}></img>
             <h1 className="widget-c">
                 {props.data.current.temp_c}<sup>&bull;</sup>C
             </h1>
             <p className="widget-text">
-                {/* <img src={data.current.condition.icon} alt='log2'></img> */}
                 {props.data.current.condition.text}
             </p>
             <p className="widget-time">

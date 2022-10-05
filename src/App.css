@@ -11,8 +11,6 @@ a {
 
 .body {
   background-color: #6ebcff;
-  /* background: rgb(174,236,238); */
-/* background: radial-gradient(circle, rgba(174,236,238,1) 0%, rgba(110,188,255,1) 100%); */
 }
 
 .container {
@@ -53,21 +51,12 @@ a {
   cursor: pointer;
 }
 
-/* .search {
-  border: none;
-  background-color: transparent;
-  font-size: x-large;
-  outline: none;
-} */
-
 .widget {
   margin: 0 auto;
   width: 35%;
   padding: 10px;
-  /* height: 75vh; */
   border-radius: 50px;
-text-align: center;
-  
+  text-align: center; 
 }
 .widget-location{
 padding: 5px;
@@ -100,21 +89,26 @@ padding: 5px;
 .form-control input {
   background-color: transparent;
   border: 0;
-  border-bottom: 2px  solid;
   display: block;
   width: 100%;
   padding: 15px 0;
   font-size: 18px;
   color: #fff;
   outline: 0;
-
+  opacity: 0;
+  transition: opacity 2s;
 }
+.form-control input:focus {
+  opacity: 1;
+}
+
 .form-control label {
   position: absolute;
-  top: 15px;
-  left: 0;
+  top: 20px;
+  left: 5px;
   pointer-events: none;
   color: #fff;
+  border-bottom: 2px  solid;
 }
 .form-control label span {
   display: inline-block;
@@ -126,7 +120,7 @@ padding: 5px;
   transform: translateY(-25px);
 } 
 
-@media (max-width: 1000px){
+@media (max-width: 1100px){
 .logoName {
   font-size: large;
 }
@@ -161,7 +155,7 @@ padding: 5px;
 
 }
 
-@media (max-width: 650px){
+@media (max-width: 600px){
   .header {
   height: 15vh;
   text-align: center;
@@ -173,13 +167,13 @@ padding: 5px;
 }
 
 .logoName {
-  font-size: xx-small;
+  font-size: small;
 }
 .logoImg {
-  width: 40px;
+  width: 45px;
 }
 .modeImg {
-  width: 40px;
+  width: 45px;
 }
 
 .widget {
@@ -189,7 +183,7 @@ padding: 5px;
 
 .widget-location{
 padding: 10%;
-font-size: 1.5rem;
+font-size: 7vw;
 }
 
 .widget-icon {
@@ -213,34 +207,14 @@ font-size: 1.5rem;
   color: #000;
 }
 .form-control input {
-  background-color: transparent;
-  border: 0;
-  border-bottom: 2px #fff solid;
-  display: block;
-  width: 100%;
-  padding: 10px 0;
-  font-size: 18px;
-  color: #fff;
-}
-.form-control input:focus,
-.form-control input:valid {
-  outline: 0;
-  border-bottom-color: #fff;
+  font-size: 15px;
 }
 .form-control label {
-  position: absolute;
   top: 15px;
   left: 0;
-  pointer-events: none;
-  color: #fff;
 }
 .form-control label span {
-  display: inline-block;
-  font-size: 9px;
-  min-width: 5px;
-  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-size: 10px;
+  min-width: 3px;
 }
-.form-control input:focus+label span{
-  transform: translateY(-30px);
-} 
 }

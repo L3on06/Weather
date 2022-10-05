@@ -3,18 +3,16 @@ import { useState } from 'react';
 import './App.css';
 import WeatherWidget from './Components/WeatherWidget';
 
-
 function App() {
   const api_key = '5dbfe70ca7194ddab81195717220110';
   const api_url = 'http://api.weatherapi.com/v1';
   const api_method = '/current.json'
   const api = `${api_url}${api_method}?key=${api_key}&q=`
 
-
-  // const [search, setSearch] = useState();
   const [data, setData] = useState();
   const [bg, setBg] = useState(true);
-
+  const [deafultWidget, setDeafultWidget] = useState(true)
+  const [isloading, setIsLoading] = useState(false)
 
   const active = () => {
     setBg(!bg)
@@ -22,12 +20,14 @@ function App() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // setSearch(e.target.value)
-    // console.log(e.target[0].value);
+    setIsLoading(true)
+
 
     axios.get(`${api}${e.target[0].value}`)
       .then(response => setData(response.data))
       .catch(error => console.log(error))
+    setIsLoading(false)
+    setDeafultWidget(false)
     e.target[0].value = '';
   }
 
@@ -62,7 +62,6 @@ function App() {
                 <span style={{ transitionDelay: '850ms' }}>y</span>
               </label>
         </form>
-
         <nav className='navbar'>
           <div onClick={active}>{(bg)
             ? <img className='modeImg' src="./images/day.png" alt='day-mode' />
@@ -72,8 +71,17 @@ function App() {
       </header>
       <main className='main container'>
         <div>
-        
-          {data && <WeatherWidget bg={bg} data={data} />}
+          {deafultWidget ?
+            <div className="widget" style={{ boxShadow: bg ? '-22px -22px 40px #63a9e6, 22px 22px 40px #79cfff' : "-31px -31px 62px #1b1b1b, 31px 31px 62px #272727" }}>
+              <h1 className="widget-location"> { isloading ? <p>is loading ....</p> : <p>---- / ----</p> }</h1>
+            <img className="widget-icon" src="./images/cloud.png" alt=""></img>
+            <h1 className="widget-c">{ isloading ? <p>is loading ....</p> : <p>--<sup>&bull;</sup>C</p> }</h1>
+            <p className="widget-text">{ isloading ? <p>is loading ....</p> : <p>--------</p> }</p>
+            <p className="widget-time">{ isloading ? <p>is loading ....</p> : <p>---- -- -- --:--</p> }</p>
+            </div>
+             :
+            (data && <WeatherWidget bg={bg} data={data} />)
+            }
         </div>
       </main>
 
