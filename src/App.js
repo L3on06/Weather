@@ -39,9 +39,9 @@ function App() {
           <a className='logoName' href='/' style={{ color: bg ? '#212121' : 'white' }}><h1>Weather</h1></a>
           <img className='logoImg' src="./images/bigCloud_smallSun.png" alt='logo' />
         </div>
-        <form className='form-control' onSubmit={handleSearch}>
-            <input type="value" required=""/>
-              <label>
+        <form className='form-control' onSubmit={handleSearch} >
+            <input type="value" required="" style={{color: bg ? '#212121' : 'white'}}/>
+              <label style={{color: bg ? '#212121' : 'white'}}>
                 <span style={{ transitionDelay: '0ms' }}>S</span>
                 <span style={{ transitionDelay: '50ms' }}>e</span>
                 <span style={{ transitionDelay: '100ms' }}>a</span>
