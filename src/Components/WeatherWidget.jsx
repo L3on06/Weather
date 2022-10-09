@@ -1,5 +1,5 @@
 import React from "react";
-import '../App.css';
+import '../style/App.css';
 
 function WeatherWidget(props) {
     const handleIcon = () => {
@@ -13,7 +13,7 @@ function WeatherWidget(props) {
                 url = './images/bigSun_smallCloud.png'
                 break;
             case "Cloudy":
-                url = './images/Cloudy.png'
+                url = './images/Cloud.png'
                 break;
             case "Overcast":
                 url = './images/bigCloud_smallSun.png'

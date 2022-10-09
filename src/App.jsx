@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
-import './App.css';
+import './style/App.css';
 import WeatherWidget from './Components/WeatherWidget';
 
 function App() {
@@ -20,17 +20,16 @@ function App() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setIsLoading(true)
+    setIsLoading(true);
 
 
     axios.get(`${api}${e.target[0].value}`)
       .then(response => setData(response.data))
       .catch(error => console.log(error))
-    setIsLoading(false)
     setDeafultWidget(false)
+    setIsLoading(false)
     e.target[0].value = '';
   }
-
 
   return (
     <div className="body" style={{ backgroundColor: bg ? '' : '#212121', color: bg ? '#212121' : 'white' }}>
@@ -39,8 +38,8 @@ function App() {
           <a className='logoName' href='/' style={{ color: bg ? '#212121' : 'white' }}><h1>Weather</h1></a>
           <img className='logoImg' src="./images/bigCloud_smallSun.png" alt='logo' />
         </div>
-        <form className='form-control' onSubmit={handleSearch} >
-            <input type="value" required="" style={{color: bg ? '#212121' : 'white'}}/>
+        <form className='form-control' onSubmit={handleSearch}>
+            <input  type="value" required="" style={{color: bg ? '#212121' : 'white'}}/>
               <label style={{color: bg ? '#212121' : 'white'}}>
                 <span style={{ transitionDelay: '0ms' }}>S</span>
                 <span style={{ transitionDelay: '50ms' }}>e</span>
