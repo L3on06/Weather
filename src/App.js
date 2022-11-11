@@ -4,7 +4,7 @@ import './style/App.css';
 import WeatherWidget from './Components/WeatherWidget';
 
 function App() {
-  const api_key = 'a5e974b6849d4575bbd163138222010';
+  const api_key = '79acef068b1a4652ace175314221011';
   const api_url = 'https://api.weatherapi.com/v1';
   const api_method = '/current.json';
   const api = `${api_url}${api_method}?key=${api_key}&q=`;
