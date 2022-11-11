@@ -4,7 +4,7 @@
 
 **Screenshots of the website because I have a callback limit and here you can see what the website would look like**
 
-<details open>
+<details close>
   <summary>Preview Screenshots</summary>
   <p>
 
